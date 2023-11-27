@@ -1,0 +1,583 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1e9e9;
+}
+/* formien muotoilut*/
+.form{
+margin-bottom: 50px;
+}
+textarea {
+  width: 100%;
+  height: 160px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+/*submit painikkeen muotoilua*/
+input[type=submit]{
+  background-color: #008CBA; /* Kommentiointipainikeen muotoilu */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+border-radius: 10px;
+}
+input[type=submit]:hover{
+  background-color: rgb(48, 112, 165);
+}
+/*logon muotoilut*/
+  #a-home { 
+    background-color:rgb(77, 126, 164);
+  
+  }
+   #a-home:hover{  /*logon muotoilua*/
+background-color:rgb(156, 172, 184) ;
+  }
+  #a-heading:hover,#a-heading:active,#a-heading:link, #a-heading:visited { /* blogi otsikoiden linkkimuotoilut*/
+      text-decoration: none;
+      color: inherit;
+    }
+  /*sivupalkin linkkien muotoilut*/
+    #a-side{       
+    text-decoration: underline;
+    color: inherit;
+  } 
+  #a-side:hover{
+    color:blue; 
+    
+  }
+
+  #a-side:active{
+    color: inherit;
+    text-decoration: underline;
+
+  }
+/*Container1 otsake alueen muotoilut*/
+.container1{width:100%; text-align: center; padding-top: 50px !important; padding-right: 90px; margin: 0;}
+.container1-posts{width:100%; text-align: center; padding-top: 50px;padding-right: 0; margin: 0;}
+/* Content sisältöalueen muotoilut */
+.content {
+    background-color: #ddd;
+    padding: 1px;
+  margin-left:50px ;
+ 
+  }
+.content-posts{
+  margin: 0;
+ padding: 0;
+  background-color: #ddd;
+}
+/* Muotoilut pinenille näytöille*/
+/*puhelimille*/
+[class*="col-"] {
+    width: 100% !important;                                         
+}  
+/* Tableteille: */
+  @media only screen and (max-width: 700px) {
+    .topnav {width: 100%;}
+    .content{ padding: 0px; margin: 0px; width: 100%; margin: 0;
+      padding: 0; }
+  .container1{width:100%; text-align: center; padding-top: 150px !important; padding-right: 90px; margin: 0;}   
+  .container1-posts{width:100%; text-align: center; padding-top: 50px;padding-right: 0; margin: 0;}                 
+  .container{ padding: 0; margin: 0; width: 100% !important;}
+.center{ padding:0;margin: 0; width: 100% !important; }
+.center2{width:100%;}
+}
+/* Pöytäkoneille ja kannettaville: */
+  @media only screen and (min-width: 768px) {
+  
+    .topnav {width: 100%;}
+    .content{width:100%; margin: 0;}
+    .center{ padding: 0;margin: 0; width: 100%; } 
+  }
+  /* When the screen is less than 603px wide, stack the links and the search field vertically instead of horizontally */
+  @media only screen and (max-width: 603px) {
+    /*.topnav a, .topnav input[type=text],*/ .center2, .center, .footer  {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100% !important; 
+      padding: 14px;
+    } 
+    .topnav a.center2{  
+text-align: center;
+margin: 10px;
+}.sidebar { margin-top: 215px !important;}  
+.container1{ margin-top: 300px; padding-right: 100px;}
+.container1-posts{ margin-top: 200px !important; padding-right: 0px;}
+  }
+/*sisältö alueen muotoilut*/
+  .container{
+  text-align:left;
+    width:100%;
+    border:none;
+    padding: 50px;
+  }
+  .container1{    /* otsake sisältöalueen muotoilut  */
+    text-align: center;
+      width:100%;
+      border:none;
+      margin-left:50px;
+ margin-top: 100px !important;
+    }
+    .container1-posts{ /*Post sivun otsake muotoilut*/
+      margin:0;
+    }
+/*side navin uudet muotoilut*/
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+margin-left: -70px;
+position: fixed;
+margin-top: 1px;
+}
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+padding-top: 40px;
+}
+/*sidebarin muotoilut pienille näytöille*/
+/* On smaller screens, where width is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media only screen and (max-width: 680px) {
+  .openbtn {
+   
+  margin-top: 40px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 10px;}
+}
+@media screen and (max-width: 603px) {
+  .sidebar {padding-top: 15px;margin-top: 289px !important;}
+  .sidebar a {font-size: 18px;}
+.openbtn{margin-top: 199px; margin-right: 20px;}
+}
+  .center {
+      background-color: whitesmoke; /* Keskitetty laatikko jossa blogi postaukset*/
+    height: fit-content;
+    margin: auto;
+    width: 50%;
+    border: 1px solid rgb(0, 0, 0);
+   border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;  
+text-align: left;
+}
+/*posts sivun post-laatikoiden muotoilu*/
+#join{
+  float: right;
+  margin-top: 10px;
+  margin-right:10px;
+  }
+#login{
+float: right;
+margin-top: 10px;
+margin-right:10px;
+}
+.button {
+  background-color: #008CBA; /* Kommentiointipainikeen muotoilu */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+border-radius: 10px;
+}
+.button:hover {
+  background-color: rgb(48, 112, 165); 
+}
+/*search barin muotoilut*/
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+/* Kolumnien muotoilut */
+/*Poistaa floatit*/
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 65%;
+  padding-left: 200px;
+}
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #ddd;
+  padding-left: 20px;
+  padding-right: 20px;
+text-align: left;
+}
+/* Fake image  */  /*TÄmän voi poistaa lopussa*/
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+/*yksittäisen postin koko omalla sivulla*/
+#postcard{
+height: auto;
+}
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+/* Responsive layout - when the screen is less than 920px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 920px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+  .topnav {width: 100%;} 
+}
+/*login sivun footer*/
+.footer-login{
+margin-top: 460px;
+}
+/*Kommenttikenttien muotoilut*/
+.comment-container{
+ display: block;
+ position: relative;
+}
+.comment-container::before{
+content: "";
+background-color: #818181;
+position: absolute;
+min-height: 100%;
+width: 1px;
+left: -10px; /*havainto viiva */
+}
+.comment-container:not(:first-child){
+  margin-left:3rem;
+margin-top: 1rem;
+left: -30px; /*havainto viiva */
+}
+.comment-card{
+padding: 20px;
+background-color: white;
+border: 1px solid rgb(0, 0, 0);
+border-radius: .5rem;
+min-width: 100%;
+box-shadow:0 0 50px rgba(0,0,0,0.1);
+}
+.comment-card h3, .comment-card p{
+margin-bottom:1rem;
+}
+.comment-footer{
+display: flex;
+font-size: 0.85rem; 
+opacity:0.6;
+gap:30px ;
+justify-content: flex-end;
+align-items: center;
+}
+/*reply korttien muotoilut*/
+.reply-card{
+  margin-left: 40px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: .5rem;
+  min-width: 100%;
+  box-shadow:0 0 50px rgba(0,0,0,0.1);
+
+  }  
+  .reply-card h3, .reply-card p{
+  margin-bottom:1rem;
+
+  }
+  .comment-footer{
+  display: flex;
+  font-size: 0.85rem; 
+  opacity:0.6;
+  gap:30px ;
+  justify-content: flex-end;
+  align-items: center;
+  }
+.show-replies{
+cursor: pointer;
+}
+/*Edit nappi kommenteissa*/
+.edit-form{
+  position: absolute;
+  top:10px;
+  right:10px 
+}
+  .edit-form button{
+width:50px ;
+height:20px;   
+position: absolute;
+top:10px;
+right:10px 
+}
+/*delete nappi kommenteissa*/
+.delete-form{
+  position: absolute;
+  top:10px;
+  right:40px 
+}
+  .delete-form button{
+width:50px ;
+height:20px;   
+position: absolute;
+top:10px;
+right:40px 
+}
+/*kommenttien avatarit*/
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+/*UUSIN topnavi tässä  **** */
+.topnav {
+  position: fixed;
+  z-index:1; /*Add this*/
+  overflow: hidden;
+  background-color: rgb(77, 126, 164);
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+/*poista hover ja lisää toplogin hoverit*/
+#toplogin:hover, #topmyprofile:hover{
+  background-color: #ddd;
+  color: black;
+}
+#toplogin,#topmyprofile{
+float: right;
+}
+.topnav a.icon:hover {    /*TAUSTAväri tänne*/
+  background-color: rgb(77, 126, 164);
+  color: black;
+}
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.topnav .icon {
+  display: none;
+}
+/* hakukentän muotoilut*/
+.topnav .search-container {
+  float: right;
+margin-left: 100px;
+}
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: rgb(62, 142, 207);
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+/* Pienemmät näytöt*/
+ @media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav .search-container {
+  display:none ;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  padding: 0;
+  margin: 10px;
+}
+}
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: fixed;}
+  .topnav.responsive .icon {
+    position: fixed;
+    right: 0;
+    top: 0;
+ 
+  }
+  /* Responsiivisen topnavin linkkien muotoilu puhelimille*/ 
+   .topnav.responsive .search-container, .topnav.responsive .search-container button, .topnav.responsive #toplogin,.topnav.responsive #topmyprofile  {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+ 
+  }
+  
+  .topnav.responsive a{
+    float: none;
+    display: block;
+    text-align: left;
+
+  }
+}
+
+/*Pienille näytöille:*/
+@media screen and (max-width: 603px) {
+  .topnav  {
+    float: none;
+  width: 100%;
+  }
+   .topnav input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100% !important;
+    margin-left: -100px;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+  .topnav {width: 100%;}
+  .content{width:100%;}
+.container2{width:100%;}
+.container1{width:100%; margin-top: 300px;}
+.search-container{width: 100%; }
+.topnav .search-container button{width: 60%; margin-bottom: 10px; margin-left:-100px;}
+}
+/*login sivun muotoilut ja forgot password sekä create account*/
+.center-login, .center-join{
+margin-top: 250px;
+
+}
+
+#uname, #pass, #email, #password, #confirm, #sendmail, #newpass, #confirmnewpass{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+/*formien muotoilut*/
+.form-group{
+margin-top: 20px;
+}
+/*login logout painike*/
+.logout {
+  display: none;
+}
+.authenticated .logout {
+  display: block;
+}
+/*avatar kuvien muotoilut*/
+.avatar {
+  margin-right: 10px;
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+/*Postausten kuvien muotoilut*/
+#image{
+width: 100%;
+  height: auto;
+max-height:200px;
+min-height: 200px;
+}
+
+/*Footerin muotoilut*/
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
